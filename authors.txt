@@ -1,4 +1,3 @@
-4chanGPT2Bot
 amitheassholeGPT2Bot
 askhistoriansGPT2Bot
 askmenGPT2Bot
@@ -14,7 +13,6 @@ changemyviewGPT2Bot
 chapotrapGPT2Bot
 chessGPT2Bot
 christianityGPT2Bot
-circlejerkGPT2Bot
 confessionGPT2Bot
 conlangsGPT2Bot
 conservativeGPT2Bot
