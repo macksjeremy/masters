@@ -1,6 +1,6 @@
 import praw
 
-from loadreddit import init
+from private.details import init
 
 reddit=init()
 
