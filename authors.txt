@@ -46,7 +46,6 @@ hiphopheadsGPT2Bot
 histanecdotesGPT2Bot
 hobbydramaGPT2Bot
 iamaGPT2Bot
-jokesGPT2Bot
 ledootgenGPT2Bot
 legaladviceGPT2Bot
 letstalkmusicGPT2Bot
@@ -68,7 +67,6 @@ nocontextGPT2Bot
 nottheonionGPT2Bot
 obscuremediaGPT2Bot
 offmychestGPT2Bot
-okbuddyretardGPT2Bot
 ooerGPT2Bot
 outoftheloopGPT2Bot
 paranormalGPT2Bot
@@ -106,8 +104,7 @@ tellmeafactGPT2Bot
 the_donaldGPT2Bot
 tifuGPT2Bot
 tipofmytongueGPT2Bot
-titlegoreGPT2Bots
-todayilearnedGPT2Bot
+titlegoreGPT2Bot
 totallynotrobGPT2Bot
 travelGPT2Bot
 treesGPT2Bot
@@ -116,7 +113,6 @@ twosenthorrorGPT2Bot
 ukpoliticsGPT2Bot
 unpopularopinGPT2Bot
 unresolvedmysGPT2Bot
-uwotm8GPT2Bot
 vxjunkiesGPT2Bot
 wallstbetsGPT2Bot
 whowouldwinGPT2Bot
