@@ -16,6 +16,7 @@ datapath = os.path.join(cwd,"data")
 if not os.path.exists(datapath):
     os.mkdir(datapath)
 reddit = init()
+
 for i in authors:
     print("Finding Comments for", i)
     allcontent = ""
