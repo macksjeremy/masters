@@ -20,6 +20,8 @@ for i in range(len(authors)):
     newpath = os.path.join(datapath, authors[i])
     if not os.path.exists(newpath):
         os.mkdir(newpath)
+    else:
+            continue
     posts = reddit.subreddit(authors[i]).hot(limit=10000)
     print(authors[i])
     for num,submission in enumerate(posts):
