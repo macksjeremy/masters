@@ -7,9 +7,8 @@ def obtainstatistic(test_data, verbose=False):
     liau = textstat.coleman_liau_index(test_data)
     ari = textstat.automated_readability_index(test_data)
     dale = textstat.dale_chall_readability_score(test_data)
-    difficult = textstat.difficult_words(test_data)
     linsear = textstat.linsear_write_formula(test_data)
-    if(verbose):
+    if verbose:
         print("Calculating Statistics for:", test_data)
         print("-------------------------------------------------------------------------------------")
         print("fleschreadingease:",flesch )
@@ -18,7 +17,6 @@ def obtainstatistic(test_data, verbose=False):
         print("coleman index",liau )
         print("automated readability index",ari)
         print("dale_chall readability:", dale)
-        print("Difficult words", difficult)
         print("linsear:",linsear)
         print("-------------------------------------------------------------------------------------")
-    return np.asarray([flesch,kincaid,smog,liau,ari,dale,difficult,linsear])
+    return np.asarray([flesch,kincaid,smog,liau,ari,dale,linsear], dtype=np.float64)
