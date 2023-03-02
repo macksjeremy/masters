@@ -1,5 +1,7 @@
 import numpy as np
 import textstat
+import tqdm
+import mauve
 def obtainstatistic(test_data, verbose=False):
     flesch = textstat.flesch_reading_ease(test_data)
     kincaid = textstat.flesch_kincaid_grade(test_data)
