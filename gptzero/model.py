@@ -1,3 +1,5 @@
+import math
+
 import torch
 import re
 from transformers import GPT2LMHeadModel, GPT2TokenizerFast
@@ -37,16 +39,10 @@ class GPT2PPL:
 
         total_valid_char = re.findall("[a-zA-Z0-9]+", sentence)
         total_valid_char = sum([len(x) for x in total_valid_char])  # finds len of all the valid characters a sentence
-
-        if total_valid_char < 100:
-            return {
-                "status": "Please input more text (min 100 characters)"}, "Please input more text (min 100 characters)"
-
         lines = re.split(r'(?<=[.?!][ \[\(])|(?<=\n)\s*', sentence)
         lines = list(filter(lambda x: (x is not None) and (len(x) > 0), lines))
 
         ppl = self.getPPL(sentence)
-        print(f"Perplexity {ppl}")
         results["Perplexity"] = ppl
 
         offset = ""
@@ -67,10 +63,7 @@ class GPT2PPL:
                 line = line[:-1]
             ppl = self.getPPL(line)
             Perplexity_per_line.append(ppl)
-        print(f"Perplexity per line {sum(Perplexity_per_line) / len(Perplexity_per_line)}")
         results["Perplexity per line"] = sum(Perplexity_per_line) / len(Perplexity_per_line)
-
-        print(f"Burstiness {max(Perplexity_per_line)}")
         results["Burstiness"] = max(Perplexity_per_line)
 
         out, label = self.getResults(results["Perplexity per line"])
@@ -102,7 +95,13 @@ class GPT2PPL:
             prev_end_loc = end_loc
             if end_loc == seq_len:
                 break
-        ppl = int(torch.exp(torch.stack(nlls).sum() / end_loc))
+        print("end", end_loc)
+        print("sum", torch.exp(torch.stack(nlls).sum()))
+        ppl_not_rounded = torch.exp(torch.stack(nlls).sum() / end_loc)
+        if(math.isnan(ppl_not_rounded)):
+            ppl = 1
+            return ppl
+        ppl = int(ppl_not_rounded)
         return ppl
 
 
