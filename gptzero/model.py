@@ -95,8 +95,8 @@ class GPT2PPL:
             prev_end_loc = end_loc
             if end_loc == seq_len:
                 break
-        print("end", end_loc)
-        print("sum", torch.exp(torch.stack(nlls).sum()))
+        #print("end", end_loc)
+        #print("sum", torch.exp(torch.stack(nlls).sum()))
         ppl_not_rounded = torch.exp(torch.stack(nlls).sum() / end_loc)
         if(math.isnan(ppl_not_rounded)):
             ppl = 1
